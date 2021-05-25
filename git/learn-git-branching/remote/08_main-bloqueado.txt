@@ -1,0 +1,27 @@
+Remote Rejected!
+
+Si trabajas en un equipo colaborativo, es probable que la rama main esté bloqueada y requiera algún proceso de Pull Request para poder mergear los cambios. Si haces commit directamente a main e intentas realizar push, recibirás un mensaje similar a este:
+
+! [remote rejected] main -> main (TF402455: Pushes to this branch are not permitted; you must use a pull request to update this branch.)
+
+==================================
+¿Por qué fue rechazado?
+
+Se rechazó el push del commit a la rama main debido a la política en la rama main que requiere el uso de Pull Requests.
+
+Trataste de crear una rama y luego hacer pushs creando un Pull Request, pero te olvidaste e hiciste commit directamente a main. Ahora estás atascado y no puedes hacer push de tus cambios.
+
+==================================
+La solución
+
+Crea otra rama llamada feature y haz push a remoto. También restablece su rama main nuevamente para que esté sincronizado con el repositorio remoto; de lo contrario, puedes tener problemas la próxima vez que realices un pull y el commit de otra persona entre en conflicto con el tuyo.
+
+reset --forSolution
+git reset --hard o/main
+git checkout -b feature C2
+git push origin feature
+
+==================================
+
+
+==================================

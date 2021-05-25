@@ -1,0 +1,19 @@
+git push
+
+Ok, entonces ya bajé los cambios de un repositorio remoto y los integré en mi trabajo localmente. Esto es genial y todo... pero ¿cómo comparto mis cambios con el resto?
+
+Bueno, la forma de subir el trabajo compartido es la opuesta a cómo descargar trabajo. Y ¿qué es lo opuesto a git pull? ¡git push!
+
+git push es el responsable de subir tus cambios a un remoto específico y de actualizar ese remoto para incluir tus nuevos commits. Cuando git push termina, todos tus amigos pueden descargar tu trabajo del remoto.
+
+Podés pensar en git push como un comando para "publicar" tu trabajo. Tiene un par de sutilezas con las que vamos a meternos pronto, pero empecemos de a poco.
+
+==================================
+Acá tenemos algunos cambios que nuestro remoto no tiene. ¡Subámoslos!
+
+git push
+
+Ahí está: el remoto recibió el commit C2, la rama main de ese remoto se actualizó para apuntar a C2, y nuestro propio reflejo del remoto (o/main) también fue actualizado. ¡Todo está en sincronía!
+
+==================================
+Para completar este nivel, simplemente compartí dos nuevos commits con el remoto. Igual, no te confíes, ¡ya se van a complicar las lecciones!

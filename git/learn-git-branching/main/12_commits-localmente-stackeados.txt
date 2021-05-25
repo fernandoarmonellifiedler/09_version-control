@@ -1,0 +1,21 @@
+Commits localmente stackeados
+
+Esta es una escena que suele pasar cuando uno desarrolla: estoy tratando de encontrar un bug bastante escurridizo. Para ayudar en mi tarea de detective, agrego un par de comandos de debug, y algunas sentencias para imprimir el estado de mi sistema.
+
+Todas estas cosas de imprimir y debuggear estan en su propia rama. Finalmente encuentro el problema, lo soluciono, ¡y disfruto!
+
+El único problema es que ahora necesito llevar mi bugFix a la rama main. Si simplemente fast-forwardeo main, entonces main va a tener todos mis agregados de debugging, que es indeseado. Tiene que haber otro modo...
+
+==================================
+Necesitamos decirle a git que sólo copie uno de los commits. Esto es tal como los niveles anteriores de mover commits por ahí -- podemos usar los mismos comandos:
+
+    git rebase -i
+    git cherry-pick
+
+Para conseguir este resultado.
+
+==================================
+Este es un nivel más avanzado, así que está en vos decidir cuál de los dos comandos querés usar, pero para completar el nivel asegurate de que main recibe el commit que bugFix referencia.
+
+git checkout main
+git cherry-pick

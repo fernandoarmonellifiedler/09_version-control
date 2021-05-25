@@ -1,0 +1,35 @@
+Ramas remotas de git
+
+Ahora que viste git clone en acción, ahondemos en lo que realmente cambió.
+
+Lo primero que habrás notado es que apareció una nueva rama en tu repositorio local llamada o/main. A este tipo de ramas se las llama ramas remotas. Las ramas remotas tienen propiedades especiales porque sirven un propósito específico.
+
+Las ramas remotas reflejan el estado de los repositorios remotos (cómo estaban la última vez que hablaste con ellos). Te ayudan a entender las diferencias entre tu trabajo local y el trabajo que ya está publicado - un paso crítico antes de compartir tu trabajo con los demás.
+
+Las ramas remotas tienen la propiedad especial de que cuando las checkouteás, pasás al modo detached HEAD. Git lo hace a propósito porque no podés trabajar en esas ramas directamente: tenés que trabajar en algún otro lado y después compartir tu trabajo con el remoto (tras lo que tus ramas remotas se actualizarán).
+
+==================================
+Qué es o/?
+
+Podrías estar preguntándote qué significa ese o/ al principio de las ramas remotas. Bueno, las ramas remotas también tienen una convención de nombres obligatoria -- se las muestra con el formato:
+
+    <nombre del remoto>/<nombre de la rama>
+
+Entonces, si mirás una rama llamada o/main, el nombre de la rama es main, y el nombre del remoto es o.
+
+La mayoría de los desarrolladores llaman origin a su remoto en lugar de o. Esto es tan común que git efectivamente crea tu remoto llamándolo origin cuando hacés git clone de un repositorio.
+
+Desafortunadamente el nombre origin completo no entra en nuestra UI, así que usamos o para abreviar :( Simplemente recordá que cuando uses el git real, tu remoto ¡probablemente se llame origin!
+
+Hay mucho para procesar, así que veámoslo en acción.
+
+==================================
+Checkouteemos una rama remota a ver qué pasa.
+
+git checkout o/main
+git commit
+
+Como ves, git nos puso en el modo detached HEAD y no actualizó o/main cuando creamos un nuevo commit. Esto es porque o/main sólo va a actualizarse cuando el remoto se actualice.
+
+==================================
+Para completar este nivel, commiteá una vez sobre main y una después de checkoutear o/main. Esto te va a ayudar a caer en cómo las ramas remotas funcionan distinto, y que sólo se actualizan para reflejar el estado del remoto.

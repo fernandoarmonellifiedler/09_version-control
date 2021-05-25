@@ -1,0 +1,34 @@
+git rebase interactivo
+
+git cherry-pick es genial cuando sabés cuáles commits querés (y sabés sus hashes) -- es dificil superar la simpleza que provee.
+
+Pero ¿qué pasa cuando no sabés qué commits querés? Por suerte ¡git te cubre en esta situación, también! Podemos usar el rebase interactivo para esto -- es la mejor manera de revisar una serie de commits que estás por rebasear.
+
+Entremos en los detalles...
+
+==================================
+Todo rebase interactivo significa usar el comando rebase con la opción -i.
+
+Si incluís esta opción, git abrirá una UI para mostrarte qué commits están a punto de ser copiados sobre el objetivo del rebase. También muestra sus hashes y mensajes, que ayuda mucho para saber qué es cada commit.
+
+Para el git "de verdad", la UI significa abrir un archivo en un editor de textos como vim. Para nuestro propósito, hice una pequeña interfaz que se comporta de ese mismo modo.
+
+==================================
+Cuando el diálogo de rebase interactivo se abre, tenés la capacidad de hacer 3 cosas:
+
+    Podés reordenar los commits con solamente cambiar su orden en la UI (en nuestra ventana, eso significa hacer drag & drop con el mouse).
+    Podés elegir ignorar completamente algunos commits. Esto se designa con pick -- no hacerle pick a algún commit significa que querés ignorarlo.
+    Finalmente, podés squashear commits. Desafortunadamente, nuestros niveles no soportan esto por cuestiones logísticas, por lo que voy a ahorrarte los detalles. Haciéndola corta, te permite combinar varios commits en uno solo.
+
+¡Genial! Veamos un ejemplo.
+
+Cuando apretes el botón, va a aparecer una ventana de rebase interactivo. Reordená los commits (sentite libre de ignorar alguno, también) ¡y mirá el resultado!
+
+git rebase -i HEAD~4
+
+==================================
+Para completar el nivel, hacé un rebase interactivo y alcanzá el orden que se muestra en la visualización objetivo. Acordate que siempre podés hacer undo y reset para arreglar errores :D
+
+git rebase -i HEAD~4
+
+==================================

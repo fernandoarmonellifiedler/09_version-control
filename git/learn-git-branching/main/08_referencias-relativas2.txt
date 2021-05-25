@@ -1,0 +1,32 @@
+El operador "~"
+
+Digamos que querés moverte un montón de niveles atrás en tu árbol de commits. Podría ser tedioso tipear ^ muchas veces, por lo que git tiene el operador ~.
+
+El operador ~ (opcionalmente) toma una cantidad que especifica la cantidad de padres que querés volver hacia atrás. Veámoslo en acción
+
+==================================
+Especifiquemos una cantidad de commits hacia atrás con ~.
+
+git checkout HEAD~4
+
+==================================
+Forzando los branches
+
+Ahora que sos un experto en las referencias relativas, usémoslas para algo.
+
+Una de las formas más comunes en que uso las referencias relativas es para mover las ramas. Podés reasignar directamente una rama a un commit usando la opción -f. Así que algo como:
+
+git branch -f main HEAD~3
+
+Mueve (forzadamente) la rama main tres padres atrás de HEAD.
+
+Las referencias relativas nos dieron una manera concisa de referenciar a C1, y forzar la rama (-f) nos dio una manera rápida de mover la rama a esa ubicación
+
+==================================
+Ahora que viste las referencias relativas y el forzar ramas combinados, usémoslos para resolver el siguiente nivel.
+
+Para completar este nivel, mové HEAD, main y bugFix a sus destinos finales.
+
+git branch -f main c6
+git checkout HEAD^
+git banch -f bugFix c0

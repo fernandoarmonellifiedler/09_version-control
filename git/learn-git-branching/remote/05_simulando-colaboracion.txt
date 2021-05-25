@@ -1,0 +1,31 @@
+Simulando la colaboración
+
+Entonces, hay algo medio tramposo acá -- para algunas de las lecciones siguientes, necesitamos explicarte cómo bajar cambios introducidos en el repositorio remoto.
+
+Eso significa que esencialmente tenemos que "hacer de cuenta" que el repositorio remoto fue actualizado por algún colega, amigo o colaborador tuyo, incluso a veces en alguna rama específica o una cantidad determinada de commits.
+
+Para lograr esto, introdujimos el bien llamado comando ¡git fakeTeamwork! Es bastante auto-explicativo: simula trabajo de nuestros colegas. Veamos una demo...
+
+==================================
+El comportamiento por default de fakeTeamwork es simplemente crear un commit en main.
+
+git fakeTeamwork
+
+Ahí está: el remoto se actualizó con un nuevo commit, y todavía no nos bajamos ese commit porque aún no hicimos git fetch.
+
+
+También podés especificar la cantidad de commits o la rama agregándolos al comando.
+
+git fakeTeamwork foo 3
+
+Con un único comando simulamos que un compañero de equipo pusheó tres commits a la rama foo de nuestro remoto.
+
+==================================
+Los niveles siguientes van a ser algo difíciles, así que vamos a exigirte un poco más en este nivel.
+
+Animate y creá un remoto (con git clone), simulá algunos cambios en ese remoto, commiteá en tu repo local, y luego pulleate esos cambios. ¡Es como varias lecciones en una!
+
+git clone
+git fakeTeamwork
+git commit
+git pull

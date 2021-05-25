@@ -1,0 +1,47 @@
+Git Rebase
+
+El segundo modo de combinar el trabajo de distintas ramas es el rebase. Rebasear esencialmente agarra un conjunto de commits, los "copia", y los aplica sobre algún otro lado.
+
+Aunque esto pueda sonar confuso, la ventaja de rebasear es que puede usarse para conseguir una secuencia de commits lineal, más bonita. El historial / log de commits del repositorio va a estar mucho más claro si sólo usás rebase.
+
+Veámoslo en acción...
+
+==================================
+Acá tenemos dos ramas otra vez. Notar que la rama bugFix está actualmente seleccionada (tiene un asterisco)
+
+Nos gustaría mover nuestro trabajo de bugFix directamente sobre el trabajo de main. De ese modo, parecería que esas dos tareas se desarrollaron secuencialmente, cuando en realidad se hicieron en paralelo.
+
+Hagámoslo usando el comando git rebase.
+
+git rebase main
+
+¡Genial! Ahora el trabajo de nuestra rama bugFix está justo encima del de main, y tenemos una secuencia lineal de commits.
+
+Notá que el commit C3 sigue existiendo en algún lado (aparece medio desvanecido en el árbol), y C3' es la "copia" que rebaseamos sobre main.
+
+El único problema es que main todavía no se actualizó, resolvámoslo ahora...
+
+==================================
+Ahora estamos parados sobre la rama main. Avancemos y rebaseémosla sobre bugFix...
+
+git rebase bugFix
+
+¡Ahí está! Como main era un ancestro de bugFix, git simplemente movió la referencia de main hacia adelante en la historia.
+
+==================================
+Para completar este nivel, hacé lo siguiente:
+
+    Checkouteá una nueva rama llamada bugFix
+    Commiteá una vez
+    Volvé a main y commiteå de nuevo
+    Checkoutá bugFix otra vez y rebaseala sobre main
+
+¡Éxitos!
+==================================
+git branch bugFix
+git checkout bugFix
+git commit
+git checkout main
+git commit
+git checkout bugFix
+git rebase main

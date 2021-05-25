@@ -1,0 +1,37 @@
+Ramas en Git
+
+Las ramas (branches) en Git son increíblemente livianas. Son sólo referencias a un commit específico - nada más. Por esto es que tantos entusiastas de Git siguen el mantra:
+
+brancheá temprano, y brancheá seguido
+
+Como no hay consumo extra de almacenamiento ni memoria al hacer varias ramas, es más fácil dividir lógicamente tu trabajo que tener un par de ramas grandes.
+
+Cuando empecemos a mezclar ramas y commits, vamos a ver cómo se combinan estas dos herramientas. Por ahora, en cambio, simplemente recordá que una rama esencialmente dice "Quiero incluir el trabajo de este commit y todos su ancestros".
+
+==================================
+Veamos cómo se ven las ramas en práctica.
+
+Acá vamos a crear una rama nueva llamada newImage.
+
+git branch newImage
+
+Ahí está, ¡eso es todo lo que hay que hacer para branchear! La rama newImage ahora referencia al commit C1.
+
+==================================
+Pongamos algo de trabajo en esta nueva rama. Apretá el botón de acá abajo.
+
+git commit
+
+¡Uh, no! ¡La rama main avanzó, pero newImage no! Eso es porque no estábamos "en" la rama nueva, y por eso el asterisco (*) estaba en main.
+
+==================================
+Digámosle a git que queremos checkoutear esa rama con
+
+git checkout [name]
+
+Esto va a situarnos en esa rama antes de commitear nuestros cambios.
+
+git checkout newImage
+git commit
+
+¡Ahí estamos! Nuestros cambios se registraron en nuestra nueva rama.

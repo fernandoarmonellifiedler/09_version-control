@@ -1,0 +1,40 @@
+Git Fetch
+
+Trabajar con remotos en git en realidad se reduce a transferir datos de y hacia otros repositorios. Mientras podamos mandar commits de un lado al otro, podemos compartir cualquier tipo de actualización registrada por git (y, por ende, compartir trabajo, archivos nuevos, ideas nuevas, cartas de amor, etc).
+
+En esta lección aprenderemos cómo traer (hacer fetch) datos desde un repositorio remoto - el comando para esto se llama, convenientemente, git fetch).
+
+Vas a notar que a medida que actualicemos nuestra representación de nuestro repositorio remoto, nuestras ramas remotas van a actualizarse para reflejar esa nueva representación. Esto está ligado a la lección anterior sobre ramas remotas.
+
+==================================
+Antes de entrar en los detalles de git fetch, veámoslo en acción. Acá tenemos un repositorio remoto que contiene dos commits que nuestro repositorio local no tiene.
+
+git fetch
+
+¡Ahí vamos! Bajamos los commits C2 y C3 a nuestro repositorio local, y nuestra rama remota o/main fue actualizada para reflejar este cambio.
+
+==================================
+Qué hace fetch?
+
+git fetch hace dos simples pasos, y sólo dos simples pasos:
+
+    baja los commits que el remoto tiene pero no están en nuestro repositorio local, y...
+    actualiza a dónde apuntan nuestras ramas remotas (por ejemplo, o/main)
+
+git fetch esencialmente sincroniza nuestra representación local del repositorio remoto con el verdadero estado del repositorio remoto (en este momento).
+
+Si recordás la lección anterior, dijimos que las ramas remotas reflejan el estado de los repositorios remotos desde la última vez que hablaste con ellos. ¡git fetch es la manera en que hablás con esos remotos! Espero que ahora esté clara la conexión entre las ramas remotas y git fetch.
+
+Usualmente, git fetch habla con el repositorio a través de internet (usando un protocolo como http:// o git://).
+
+==================================
+¿Qué no hace fetch?
+
+Sin embargo, git fetch no modifica en absoluto tu estado local. No va a actualizar tu rama main ni va a cambiar nada sobre cómo se ve tu sistema de archivos en este momento.
+
+Es importante entender esto, porque un montón de desarrolladores piensan que correr git fetch hará que su estado local refleje el estado del remoto. git fetch puede descargar los datos necesarios para hacerlo, pero no cambia ninguno de tus archivos locales. Vamos a aprender otros comandos para hacer eso más adelante :D
+
+Entonces, después de todo, podés pensar a git fetch como un paso de descarga.
+
+==================================
+Para completar este nivel, simplemente corré git fetch y bajate todos los commits.
